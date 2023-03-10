@@ -164,6 +164,7 @@ export const User = () => {
                 return (
                   <>
                     <tr
+                       style={{cursor:"pointer"}}
                       key={i}
                       onClick={() => {
                         rowActionHandler(e);
