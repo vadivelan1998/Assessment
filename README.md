@@ -30,6 +30,14 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+
+### `observations`
+Firstly iam using axios to fetch the data from the api after fetching the data iam storing the state in the redux
+
+if you click any of the row in the table then the pop up modal will open and show other details like address, website,phone
+
+if you see there are three input fields is there so, it is used to filter according to the username, name, email
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
