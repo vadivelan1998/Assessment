@@ -1,0 +1,13 @@
+.nav{
+    border:1px solid grey ;
+    background-color: teal;
+    height: 50px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.city,.country,.home{
+   width: 150px;
+   height: 40px;
+   margin-right: 20px;
+}

@@ -1,0 +1,8 @@
+.table{
+   
+    margin: auto;
+    display:inline-block;
+}
+td,th,tr{
+    border: 1px solid grey;
+}
