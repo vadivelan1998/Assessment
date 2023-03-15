@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getUser } from "../../redux/user/userAction";
+import { add, getUser } from "../../redux/user/userAction";
 
 import "./User.css";
 import PropTypes from "prop-types";
@@ -52,6 +52,7 @@ BootstrapDialogTitle.propTypes = {
 
 export const User = () => {
   const [filter, setFilter] = useState("");
+  const [userData, setUserData] = useState({});
   const [usernameFilter, setUsernameFilter] = useState("");
   const [emailFilter, setEmailFilter] = useState("");
   const [data, setData] = useState();
@@ -72,7 +73,13 @@ export const User = () => {
     setData(e);
     handleClickOpen();
   };
-
+let handleInput=(e)=>{
+  setUserData({ ...userData,[e.target.name]:e.target.value})
+}
+let handleSubmit=(e)=>{
+e.preventDefault()
+dispatch(add(userData))
+}
   return (
     <Fragment>
       <BootstrapDialog
@@ -111,6 +118,42 @@ export const User = () => {
           </Typography>
         </DialogContent>
       </BootstrapDialog>
+      <form onSubmit={handleSubmit}>
+        <input
+          onChange={(e) => {
+            handleInput(e);
+          }}
+          name="name"
+          type="text"
+          placeholder="name"
+        />
+        <input
+          onChange={(e) => {
+            handleInput(e);
+          }}
+          name="username"
+          type="text"
+          placeholder="username"
+        />
+        <input
+          onChange={(e) => {
+            handleInput(e);
+          }}
+          name="email"
+          type="text"
+          placeholder="email"
+        />
+        <input
+          onChange={(e) => {
+            handleInput(e);
+          }}
+          name="id"
+          type="text"
+          placeholder="id"
+        />
+        <input type="submit" value="add" />
+      </form>
+
       <div className="table">
         <br />
         <br />
@@ -164,7 +207,7 @@ export const User = () => {
                 return (
                   <>
                     <tr
-                       style={{cursor:"pointer"}}
+                      style={{ cursor: "pointer" }}
                       key={i}
                       onClick={() => {
                         rowActionHandler(e);

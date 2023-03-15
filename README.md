@@ -32,6 +32,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 
 ### `observations`
+[demo](Screenshot assignment.png)
 Firstly iam using axios to fetch the data from the api after fetching the data iam storing the state in the redux
 
 if you click any of the row in the table then the pop up modal will open and show other details like address, website,phone
